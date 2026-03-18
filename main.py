@@ -1,35 +1,53 @@
-from utils import *
+from utils import add, sub, multiply, divide, exponent, modulo, floor_divide, absolute
 
 while True:
-    op = input("Which calculation would you like to perform? (add, subtract, multiply, divide, exponent, modulo, floor_divide, absolute, exit):\n").lower()
+    opcion = input(
+        "Which calculation would you like to perform? "
+        "(add, subtract, multiply, divide, exponent, modulo, floor_divide, absolute, exit):\n"
+    ).lower()
 
-    if op == "exit":
+    # salir
+    if opcion == "exit":
         break
 
-    if op not in ["add", "subtract", "multiply", "divide", "exponent", "modulo", "floor_divide", "absolute"]:
+    # validar opción
+    if opcion not in [
+        "add", "subtract", "multiply", "divide",
+        "exponent", "modulo", "floor_divide", "absolute"
+    ]:
         print("Invalid option!")
         continue
 
-    if op == "absolute":
+    # caso especial: absolute
+    if opcion == "absolute":
         num = float(input("Enter the number:\n"))
-        print(f"The result is: {absolute(num)}")
-    else:
-        a = float(input("Enter the first number:\n"))
-        b = float(input("Enter the second number:\n"))
+        resultado = absolute(num)
+        print(f"The result is: {resultado}")
+        continue
 
-        if op == "add":
-            res =   (a, b)
-        elif op == "subtract":
-            res = sub(a, b)
-        elif op == "multiply":
-            res = multiply(a, b)
-        elif op == "divide":
-            res = divide(a, b)
-        elif op == "exponent":
-            res = exponent(a, b)
-        elif op == "modulo":
-            res = modulo(a, b)
-        elif op == "floor_divide":
-            res = floor_divide(a, b)
+    # pedir dos números
+    num1 = float(input("Enter the first number:\n"))
+    num2 = float(input("Enter the second number:\n"))
 
-        print(f"The result is: {res}")
+    if opcion == "add":
+        resultado = add(num1, num2)
+
+    elif opcion == "subtract":
+        resultado = sub(num1, num2)
+
+    elif opcion == "multiply":
+        resultado = multiply(num1, num2)
+
+    elif opcion == "divide":
+        resultado = divide(num1, num2)
+
+    elif opcion == "exponent":
+        resultado = exponent(num1, num2)
+
+    elif opcion == "modulo":
+        resultado = modulo(num1, num2)
+
+    elif opcion == "floor_divide":
+        resultado = floor_divide(num1, num2)
+
+    print(f"The result is: {resultado}")
