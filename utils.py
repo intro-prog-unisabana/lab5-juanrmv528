@@ -46,34 +46,35 @@
     print("This file is being run directly.")
     # FREEZE CODE END
 
+def add(num1, num2):
+    return num1 + num2
 
-def add(a, b):
-    return a + b
+def sub(num1, num2):
+    return num1 - num2
 
-def sub(a, b):
-    return a - b
+# Parte II
+def multiply(num1, num2):
+    return num1 * num2
 
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if b == 0:
+def divide(num1, num2):
+    if num2 == 0:
         return "Error: Division by zero is not allowed."
-    return a / b
+    return num1 / num2
 
-def exponent(a, b):
-    return a ** b
+# Parte III
+def exponent(base, exp):
+    return base ** exp
 
-def modulo(a, b):
-    if b == 0:
+def modulo(num1, num2):
+    if num2 == 0:
         return "Error: Modulo by zero is not allowed."
-    return a % b
+    return num1 % num2
 
-def floor_divide(a, b):
-    if b == 0:
+# Parte IV
+def floor_divide(num1, num2):
+    if num2 == 0:
         return "Error: Division by zero is not allowed."
-    return a // b
+    return num1 // num2
 
-def absolute(a):
-    return abs(a)
-
+def absolute(num):
+    return abs(num)
